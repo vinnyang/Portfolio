@@ -1,4 +1,8 @@
 Portfolio::Application.routes.draw do
+  root                :to=> 'pages#role'
+  match '/education', :to=> 'pages#education'
+  match '/exp',       :to=> 'pages#exp'
+  match '/other',     :to=> 'pages#other'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +52,7 @@ Portfolio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => 'pages#role'
 
   # See how all your routes lay out with "rake routes"
 
