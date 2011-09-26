@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vincent Yang's Portfolio | <%=  @title%></title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<div id="bg" ><%= image_tag ("bg.png"), :class =>'stretch' %></div>
+	<div id ="name"><%= image_tag("name.png")%></div>
+	<div id = "contact"><%= render "layouts/contact_info" %></div>
+	<h2 id ="title"><%= @title %></h2>
+	<div id = "main"><%= yield %></div>
+	<div id = "left_sidebar"><%= render "layouts/nav" %></div>
+	<div class ="round" id = "footer"><%= render "layouts/footer" %></div>
+</body>
+</html>
