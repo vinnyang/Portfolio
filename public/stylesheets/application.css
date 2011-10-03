@@ -68,7 +68,6 @@ body {
 	height:650px;
 }
 .main{
-	width:95%;
 	overflow:auto;
 	height:700px;
 /*	width:65%;*/
@@ -86,7 +85,7 @@ body {
 /*	padding-top:3%;*/
 	font-weight:bold;
 	font-size: 10px;
-	float:left;
+	float:right;
 }
 
 .footer{
