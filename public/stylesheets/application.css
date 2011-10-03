@@ -68,9 +68,9 @@ body {
 	height:650px;
 }
 .main{
-	width: 95%;
+	width:95%;
 	overflow:auto;
-	height:690px;
+	height:700px;
 /*	width:65%;*/
 /*	margin-left: 30%;*/
 /*  height: 200px;*/
@@ -86,7 +86,7 @@ body {
 /*	padding-top:3%;*/
 	font-weight:bold;
 	font-size: 10px;
-	float:right;
+	float:left;
 }
 
 .footer{
@@ -96,8 +96,8 @@ body {
 	position:absolute;
 	bottom:0;
 	width:100%;
-	padding-top:10px;
-	padding-bottom:10px;
+	padding-top:5px;
+	padding-bottom:5px;
 	font-size:10px;
 }
 
