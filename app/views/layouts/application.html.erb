@@ -6,12 +6,23 @@
 	<!-- <%= javascript_include_tag "application" %> -->
 </head>
 <body>
-	<div id="bg"><%= image_tag ("bg.png"), :class =>'stretch' %></div>
-	<div id ="name"><%= image_tag("name.png")%></div>
-	<div id = "contact"><%= render "layouts/contact_info" %></div>
-	<h2 id ="title"><%= @title %></h2>
-	<div id = "main"><%= yield %></div>
-	<div id = "left_sidebar"><%= render "layouts/nav" %></div>
-	<div class ="round" id = "footer"><%= render "layouts/footer" %></div>
+<div id="bg">	
+	<div class ="left_sidebar">
+		<%= image_tag "name.png", :id => 'name'%>
+		<%= render "layouts/nav", :id=> 'nav'%>
+	</div>
+	<div class ="content">
+		<div class = "contact">
+			<%= render "layouts/contact_info" %>
+		</div>
+		<h2 class ="title">
+			<%= @title %>
+		</h2>
+		<div class = "main">
+			<%= yield %>
+		</div>
+	<div style="clear:both;"></div>
+	</div></div>
+	<div class ="footer" id="round"><%= render "layouts/footer"%></div>
 </body>
 </html>
