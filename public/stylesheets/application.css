@@ -27,16 +27,10 @@ li{
 	padding-top: 15px;
 } 
 hr{
-	border-bottom-color:#999999;
-	  border-bottom-style:dashed;
-	  border-bottom-width:3px;
-	  border-color:initial;
-/*	  border-left-style:none;
-	  border-left-width:0;
-	  border-right-style:none;
-	  border-right-width:0;*/
-	  border-top-style:none;
-	  border-top-width:0;
+	border-bottom-style:dashed;
+	border-bottom-color:black;
+	border-bottom-width:1px;
+	border-top-width:0;
 }
 body {
 	margin:0;

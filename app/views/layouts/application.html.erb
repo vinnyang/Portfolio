@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Vincent Yang's Portfolio | <%=  @title%></title>
-	<%= stylesheet_link_tag "./application", :media => 'screen'%>
+	<%= stylesheet_link_tag "application", :media => 'screen'%>
 	<!-- <%= javascript_include_tag "application" %> -->
+	<%= favicon_link_tag 'favicon.ico', :cache => true %>
 </head>
 <body>
+
 <div id="bg">	
 	<div class ="left_sidebar">
-		<%= image_tag "name.png", :id => 'name'%>
+		<%= image_tag "logo.png", :id => 'name'%>
 		<%= render "layouts/nav"%>
 	</div>
 	<div class ="content">
