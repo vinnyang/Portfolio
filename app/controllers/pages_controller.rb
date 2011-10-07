@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  # @modTime = File.mtime('../views/layouts/application.html.erb')
   def education
     @title = "Education"
   end
