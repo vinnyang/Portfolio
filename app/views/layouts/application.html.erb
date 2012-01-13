@@ -9,6 +9,7 @@
 	<!-- <%= javascript_include_tag "rails" %> -->
 	<%= csrf_meta_tag %>
 	<title>Vincent Yang | <%=  @title%></title>
+	<!-- google analytics -->
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -47,14 +48,14 @@
 		}
 		#topbar{
 			width:100%;
-			height:25px;
-			margin:10px 0px 10px 0px;
+			height:30px;
+			margin:0px 0px 10px 0px;
 			border-bottom:1px #777 dotted;
 		}
 		#nav ul{			
 			list-style:none;
 			float:right;
-			margin:5px 0 15px 0;
+			margin:10px 0 5px 0;
 		}
 		#nav li{
 			display:inline;
@@ -107,8 +108,8 @@
 			display:block;
 		}
 		#footer_container .title{
-			font-family:Tahoma;
-			font-size:14pt;
+			font-family:Helvatica;
+			font-size:18pt;
 			margin:5px 0px;
 		}
 		#skills_wrapper{
@@ -122,7 +123,7 @@
 			height:100%;
 			float:left;
 		}
-		#f_container3{
+		#logo_wrapper{
 			width:100px;
 			height:100%;
 			float:left;
@@ -130,10 +131,7 @@
 			top:20px;
 			right:15px;
 		}
-		#skills{
-			padding:20px 20px 10px 20px;
-		}
-		#contact_info{
+		#skills, #contact_info{
 			padding:20px 20px 10px 20px;
 		}
 		#copyright{
@@ -162,9 +160,8 @@
 			</div>
 			<div id="contact_wrapper">
 				<%= render "layouts/contact_info" %>
-				<!-- <%= render "layouts/cv" %>  -->
 			</div>
-			<div id="f_container3"><%= link_to image_tag("logo.png"), '/'%></div>
+			<div id="logo_wrapper"><%= link_to image_tag("logo.png", :id =>'logo'), '/'%></div>
 		</div>
 		<div id="copyright"><%= render "layouts/footer"%></div>
 	</div>
@@ -177,6 +174,18 @@
 	    'fallback' : '', 
 	    'monochrome' : true
 	}).css('background-color', '#ddd');
+</script>
+<!-- change logo opacity with mouse hover -->
+<script>
+
+		$('#logo').fadeTo('10', '0.4');
+		$('#logo').hover(function(){
+			$(this).fadeTo('10', '1');
+			$(this).mouseleave(function(){
+				$(this).fadeTo('fast', '0.4');
+			});
+		});
+
 </script>
 </body>
 </html>

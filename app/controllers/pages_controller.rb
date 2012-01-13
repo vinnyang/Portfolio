@@ -13,10 +13,10 @@ class PagesController < ApplicationController
   end
 
   def other
-    @title = "Others"
+    @title = "Other"
   end
   
   def home
-    @title = "Vincent Yang"
+    @title = "About Me"
   end
 end
