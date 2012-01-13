@@ -1,5 +1,6 @@
 Portfolio::Application.routes.draw do
-  root                :to=> 'pages#role'
+  root                :to=> 'pages#home'
+  match '/showcase',  :to=> 'pages#showcase'
   match '/education', :to=> 'pages#education'
   match '/exp',       :to=> 'pages#exp'
   match '/other',     :to=> 'pages#other'
@@ -52,7 +53,7 @@ Portfolio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#role'
+  # root :to => 'pages#role'
 
   # See how all your routes lay out with "rake routes"
 

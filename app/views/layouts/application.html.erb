@@ -1,31 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vincent Yang's Portfolio | <%=  @title%></title>
 	<%= stylesheet_link_tag "application", :media => 'screen'%>
-	<!-- <%= javascript_include_tag "application" %> -->
+	<%= javascript_include_tag "application" %>
 	<%= favicon_link_tag 'favicon.ico'%>
-</head>
-<body>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" %>
+	<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/noisy/1.1/jquery.noisy.min.js" %>
+	<!-- <%= javascript_include_tag "rails" %> -->
+	<%= csrf_meta_tag %>
+	<title>Vincent Yang | <%=  @title%></title>
+	<script type="text/javascript">
 
-<div id="bg">	
-	<div class ="left_sidebar">
-		<%= image_tag "name.png", :id => 'name'%>
-		<%= render "layouts/cv" %>
-		<%= render "layouts/nav"%>
-	</div>
-	<div class ="content">
-		<div class = "contact">
-			<%= render "layouts/contact_info" %>
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-28239083-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+	<style>
+		body{
+			background:#ddd;
+			margin:0px;
+			font-family:Verdana;
+			font-size:8pt;
+		}
+		body a:link{
+			text-decoration:none;
+			color:#297cab;/*blue*/
+		}
+		body a:visited{
+			color:#297cab;
+		}
+		body a:hover{
+			color:#ea1;
+		}
+
+		#body_container{
+			width:750px;
+			height:100%;
+			margin:auto;
+		}
+		#topbar{
+			width:100%;
+			height:25px;
+			margin:10px 0px 10px 0px;
+			border-bottom:1px #777 dotted;
+		}
+		#nav ul{			
+			list-style:none;
+			float:right;
+			margin:5px 0 15px 0;
+		}
+		#nav li{
+			display:inline;
+		}
+		#page_title{
+			height:45px;
+			width:100%;
+			margin-top:15px;
+			font-family:Tahoma;
+			font-size:24pt;
+		}
+		#content_container{
+			height:500px;
+			width:100%;
+			overflow:auto;
+			font-family:Helvatica;
+		}
+		#content{
+			margin:20px 0px 0px 20px;
+			font-family:Tahoma;
+			font-size:10pt;
+		}
+		#content div.title{
+			font-weight:bold;
+			font-family:Gerogia;
+			font-size:12pt;
+			text-decoration:underline;
+		}
+		#content span.details{
+			position:relative;
+			top:5px;
+			left:10px;
+		}
+		#content a{
+			font-size:9pt;
+			font-weight:bold;
+			text-decoration:underline;
+		}
+		#footer_container{
+			width:100%;
+			height:150px;
+			margin-top:5px;
+			border-top:1px #777 dotted;
+			border-bottom:1px #777 dotted;
+			line-height:130%;
+		}
+		#footer_container div>span{
+			padding-left:10px;
+			padding-top:10px;
+			display:block;
+		}
+		#footer_container .title{
+			font-family:Tahoma;
+			font-size:14pt;
+			margin:5px 0px;
+		}
+		#skills_wrapper{
+			width:400px;
+			height:100%;
+			float:left;
+		}
+		#contact_wrapper 
+		{
+			width:250px;
+			height:100%;
+			float:left;
+		}
+		#f_container3{
+			width:100px;
+			height:100%;
+			float:left;
+			position:relative;
+			top:20px;
+			right:15px;
+		}
+		#skills{
+			padding:20px 20px 10px 20px;
+		}
+		#contact_info{
+			padding:20px 20px 10px 20px;
+		}
+		#copyright{
+			height:20px;
+			width:100%;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>		
+	<div id="body_container">
+		<div id="topbar">
+			<%= render "layouts/nav"%>
 		</div>
-		<h2 class ="title">
+		<div id ="page_title">
 			<%= @title %>
-		</h2>
-		<div class = "main">
-			<%= yield %>
 		</div>
-	<div class="clear_both"></div>
-	</div></div>
-	<div class ="footer"><%= render "layouts/footer"%></div> <!-- add lastModified -->
+		<div id="content_container">
+			<div id="content">
+				<%= yield %>
+			</div>
+		</div>
+		<div id="footer_container">
+			<div id="skills_wrapper">
+				<%= render "layouts/skills" %>
+			</div>
+			<div id="contact_wrapper">
+				<%= render "layouts/contact_info" %>
+				<!-- <%= render "layouts/cv" %>  -->
+			</div>
+			<div id="f_container3"><%= link_to image_tag("logo.png"), '/'%></div>
+		</div>
+		<div id="copyright"><%= render "layouts/footer"%></div>
+	</div>
+<!-- add noise to background -->
+<script>
+	$('body').noisy({
+	    'intensity' : 0.754, 
+	    'size' : '100', 
+	    'opacity' : 0.070, 
+	    'fallback' : '', 
+	    'monochrome' : true
+	}).css('background-color', '#ddd');
+</script>
 </body>
 </html>

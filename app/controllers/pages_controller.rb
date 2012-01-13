@@ -4,16 +4,19 @@ class PagesController < ApplicationController
     @title = "Education"
   end
 
-  def role
-    @title = "Roles/Skills"
+  def showcase
+    @title = "Showcase"
   end
 
   def exp
-    @title = "Professional Experience"
+    @title = "Work Experience"
   end
 
   def other
     @title = "Others"
   end
   
+  def home
+    @title = "Vincent Yang"
+  end
 end
