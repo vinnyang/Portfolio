@@ -40,7 +40,9 @@
 		body a:hover{
 			color:#ea1;
 		}
-
+		strong{
+			font-family:Helvatica;
+		}
 		#body_container{
 			width:750px;
 			height:100%;
@@ -71,7 +73,7 @@
 			height:500px;
 			width:100%;
 			overflow:auto;
-			font-family:Helvatica;
+			font-family:Freesans;
 		}
 		#content{
 			margin:20px 0px 0px 20px;
@@ -132,12 +134,13 @@
 			right:15px;
 		}
 		#skills, #contact_info{
-			padding:20px 20px 10px 20px;
+			padding:20px 10px 10px 20px;
 		}
 		#copyright{
 			height:20px;
 			width:100%;
 			text-align:center;
+			padding-top:3px;
 		}
 	</style>
 </head>
@@ -177,13 +180,15 @@
 </script>
 <!-- change logo opacity with mouse hover -->
 <script>
-
-		$('#logo').fadeTo('10', '0.4');
+		// $('#content_container').css('background', 'white').fadeTo('10', '0.2');
+		$(document).ready(function(){
+			$('#logo').fadeTo('1', '0.4');
+		});
 		$('#logo').hover(function(){
-			$(this).fadeTo('10', '1');
-			$(this).mouseleave(function(){
-				$(this).fadeTo('fast', '0.4');
-			});
+			$(this).fadeTo('1', '1');
+		});
+		$('#logo').mouseleave(function(){
+			$(this).fadeTo('1', '0.4');
 		});
 
 </script>
